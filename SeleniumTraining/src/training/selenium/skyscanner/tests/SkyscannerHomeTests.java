@@ -19,9 +19,9 @@ public class SkyscannerHomeTests {
 	}
 	
 
-	@Test
+	//@Test
 	public void homePageAvailable(){
-		driver.navigate().to("https://www.skyscanner.co.nz/");
+		
 		HomePage homePage = new HomePage(driver);
 		String aTitle = homePage.getTitle();
 		Assert.assertEquals(aTitle, "Cheap flights | Free flight comparison at Skyscanner.co.nz");
@@ -29,8 +29,9 @@ public class SkyscannerHomeTests {
 	
 	@Test
 	public void verifySearchResultsHeader(){
+		driver.navigate().to("https://www.skyscanner.co.nz/");
 		HomePage homePage = new HomePage(driver);
-		homePage.setFrom();
+		homePage.setFrom("MNL");
 		homePage.setTo();
 		homePage.setDepart();
 		homePage.setReturn();
