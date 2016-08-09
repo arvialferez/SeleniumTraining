@@ -1,4 +1,4 @@
-package training.selenium.skyscanner.pages;
+package training.selenium.skyscanner.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 
@@ -11,7 +11,7 @@ public class HomePage {
 	}
 	
 	public String getTitle() {
-		// TODO Auto-generated method stub
+
 		return driver.getTitle();
 	}
 

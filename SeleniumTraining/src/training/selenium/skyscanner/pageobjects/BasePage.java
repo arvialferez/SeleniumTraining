@@ -1,4 +1,4 @@
-package training.selenium.skyscanner.pages;
+package training.selenium.skyscanner.pageobjects;
 
 public  abstract class BasePage {
 	

@@ -6,12 +6,17 @@ import org.testng.annotations.*;
 
 import training.selenium.DriverFactory;
 import training.selenium.DriverFactory.DriverTypes;
-import training.selenium.skyscanner.pages.HomePage;
+import training.selenium.skyscanner.pageobjects.HomePage;
 
 
 public class SkyscannerHomeTests {
 	
-	WebDriver driver = DriverFactory.GetDriver(DriverTypes.FIREFOX);
+	WebDriver driver;
+	
+	@BeforeClass
+	public void initDriver(){
+		driver = DriverFactory.GetDriver(DriverTypes.FIREFOX);
+	}
 	
 
 	@Test
@@ -30,6 +35,11 @@ public class SkyscannerHomeTests {
 		homePage.setDepart();
 		homePage.setReturn();
 		
+	}
+	
+	@AfterClass
+	public void close(){
+		driver.close();
 	}
 	
 }
