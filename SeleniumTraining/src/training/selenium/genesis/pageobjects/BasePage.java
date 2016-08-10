@@ -9,6 +9,7 @@ public abstract class BasePage {
 	
 	public BasePage(WebDriver driver, String url){
 		this.driver = driver;
+		this.url = url;
 	}
 	
 	public String getTitle() {
