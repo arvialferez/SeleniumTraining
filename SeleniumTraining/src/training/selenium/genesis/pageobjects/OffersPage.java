@@ -14,16 +14,6 @@ public class OffersPage extends BasePage {
 		super(driver, URL);
 	}
 	
-	public List<WebElement> offers(){		
-		WebElement offersSection =  driver.findElement(By.id("article_10154_10180_919955_10.3"));
-		
-		//List<WebElement> offers = offersSection.findElements(By.cssSelector("gne-col-4 gap-right"));
-		//List<WebElement> offers = offersSection.findElements(By.tagName("sub"));
-		List<WebElement> offers = offersSection.findElements(By.className("content-device"));
-		
-		return offers;		
-	}
-	
 	public WebElement electricityOffer(){	
 		
 		WebElement electricityOffer = offers().get(1);
@@ -33,6 +23,7 @@ public class OffersPage extends BasePage {
 	
 	public WebElement electricityOfferSignupButton(){
 		WebElement signUpButton = electricityOffer().findElement(By.xpath(".//button[contains(.,'Sign Up Now')]"));
+		
 		return signUpButton;
 	}
 	
@@ -45,6 +36,13 @@ public class OffersPage extends BasePage {
 	public WebElement gasOfferSignupButton(){
 		WebElement signUpButton = gasOffer().findElement(By.xpath(".//button[contains(.,'Sign Up Now')]"));
 		return signUpButton;
+	}
+	
+	public List<WebElement> offers(){		
+		WebElement offersSection =  driver.findElement(By.id("article_10154_10180_919955_10.3"));
+		List<WebElement> offers = offersSection.findElements(By.className("content-device"));
+		
+		return offers;		
 	}
 
 }
